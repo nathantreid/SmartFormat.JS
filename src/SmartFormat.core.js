@@ -78,8 +78,9 @@
 		,
 		evaluateSelector: function(data, properties) {
 			var value = data;
-			each(properties.split('.'), function(property) {
-				each(this.selectors, function(selector) {
+			var self = this;
+			each(properties.split('.'), function (property) {
+				each(self.selectors, function(selector) {
 					var result = selector(value, property);
 					if (result !== undefined) {
 						value = result;
