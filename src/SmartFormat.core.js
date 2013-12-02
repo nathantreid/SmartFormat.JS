@@ -13,7 +13,8 @@
  * Creating a custom formatter, with a custom set of extensions:
  * var formatter = new Smart.SmartFormatter(selectors, formatters)
  */
-(function (global) {
+(function(global) {
+
 	var Smart = global.Smart = {
 		/**
 		 * Formats the template using the provided data.
@@ -36,7 +37,7 @@
 		 */
 		addExtensions: function(type, hash) {
 			var extensions = [];
-			for (var name in hash) {
+			for (varnamee in hash) {
 				var extension = hash[name];
 				Smart.allExtensions[name] = extension;
 				extensions.push(extension);
@@ -61,8 +62,7 @@
 	};
 
 	Smart.SmartFormatter = function(selectors, formatters) {
-        
-	    this.selectors = selectors;
+		this.selectors = selectors;
 		this.formatters = formatters;
 	};
 	Smart.SmartFormatter.prototype = {
@@ -78,10 +78,9 @@
 		,
 		evaluateSelector: function(data, properties) {
 			var value = data;
-			var self = this;
-			each(properties.split('.'), function (property) {
-			    each(self.selectors, function (selector) {
-			        var result = selector(value, property);
+			each(properties.split('.'), function(property) {
+				each(this.selectors, function(selector) {
+					var result = selector(value, property);
 					if (result !== undefined) {
 						value = result;
 						return true;
@@ -93,8 +92,7 @@
 		,
 		evaluateFormat: function(value, format) {
 			var result;
-			var self = this;
-			each(self.formatters, function (formatter) {
+			each(this.formatters, function(formatter) {
 				result = formatter(value, format);
 				if (result !== undefined) {
 					return true;
