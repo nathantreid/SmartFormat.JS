@@ -24,10 +24,10 @@
 		 * @return {String}
 		 */
 		format: function(template, data) {
-			if (!Smart.default) {
-				Smart.default = new Smart.SmartFormatter(Smart.defaultSelectors, Smart.defaultFormatters);
+			if (!Smart['default']) {
+			    Smart['default'] = new Smart.SmartFormatter(Smart.defaultSelectors, Smart.defaultFormatters);
 			}
-			return Smart.default.format(template, data);
+			return Smart['default'].format(template, data);
 		}
 		,
 		/**
