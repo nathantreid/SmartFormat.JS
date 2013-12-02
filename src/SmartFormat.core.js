@@ -49,7 +49,7 @@
 		/**
 		 * Holds the default instance of SmartFormatter
 		 */
-		default: null
+		'default': null
 		,
 		defaultSelectors: [ ]
 		,
